@@ -1,0 +1,17 @@
+* {
+    box-sizing: border-box;
+    margin-top: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-bottom: 0px;
+  }
+
+  .hands{
+      width: 100%;
+      border: 1px solid pink;
+  }
+
+  .knees {
+      width: 60%;
+      border: 1px dotted magenta;
+  }
