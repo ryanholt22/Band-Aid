@@ -1,3 +1,23 @@
-body {
+body, .div, .h1, .nav {
     font-family: 'Montserrat', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    background-color: black;
+}
+.jumbotron {
+    background-color: white;
+    color: black;
+}
+li {
+    color: black;
+}
+.card-body {
+    background-color:black;
+    color: white;
+}
+#recently, #history {
+ font-size: 15px;
+ text-align: center;
+}
+h4 {
+    text-align: center;
 }
