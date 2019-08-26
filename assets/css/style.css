@@ -1,23 +1,187 @@
-body, .div, .h1, .nav {
-    font-family: 'Montserrat', sans-serif, Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-    background-color: black;
+#sidebarCollapse {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
 }
-.jumbotron {
-    background-color: white;
-    color: black;
+#sidebarCollapse span {
+    width: 80%;
+    height: 2px;
+    margin: 0 auto;
+    display: block;
+    background: rgb(7,20,24);
+    transition: all 0.8s cubic-bezier(0.810, -0.330, 0.345, 1.375);
 }
-li {
-    color: black;
+
+#sidebarCollapse span:first-of-type {
+    /* rotate first one */
+    transform: rotate(45deg) translate(2px, 2px);
 }
-.card-body {
-    background-color:black;
-    color: white;
+#sidebarCollapse span:nth-of-type(2) {
+    /* second one is not visible */
+    opacity: 0;
 }
-#recently, #history {
- font-size: 15px;
- text-align: center;
+#sidebarCollapse span:last-of-type {
+    /* rotate third one */
+    transform: rotate(-45deg) translate(1px, -1px);
 }
-h4 {
+#sidebarCollapse.active span {
+    /* no rotation */
+    transform: none;
+    /* all bars are visible */
+    opacity: 1;
+    margin: 5px auto;
+}
+.wrapper {
+    display: flex;
+    align-items: stretch;
+    perspective: 1500px; 
+}
+#sidebar {
+    min-width: 250px;
+    max-width: 250px;
+    background: white;
+    color: #fff;
     text-align: center;
+    transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
+    transform-origin: center left; /* Set the transformed position of sidebar to center left side. */
 }
+#sidebar.active {
+    margin-left: -250px;
+    transform: rotateY(100deg); /* Rotate sidebar vertically by 100 degrees. */
+}
+@media (max-width: 768px) {
+    /* Reversing the behavior of the sidebar: 
+       it'll be rotated vertically and off canvas by default, 
+       collapsing in on toggle button click with removal of 
+       the vertical rotation.   */
+    #sidebar {
+        margin-left: -250px;
+        transform: rotateY(100deg);
+    }
+    #sidebar.active {
+        margin-left: 0;
+        transform: none;
+    }
+    /* Reversing the behavior of the bars: 
+       Removing the rotation from the first,
+       last bars and reappear the second bar on default state, 
+       and giving them a vertical margin */
+    #sidebarCollapse span:first-of-type,
+    #sidebarCollapse span:nth-of-type(2),
+    #sidebarCollapse span:last-of-type {
+        transform: none;
+        opacity: 1;
+        margin: 5px auto;
+    }
+    /* Removing the vertical margin and make the first and last bars rotate again when the sidebar is open, hiding the second bar */
+    #sidebarCollapse.active span {
+        margin: 0 auto;
+    }
+    #sidebarCollapse.active span:first-of-type {
+        transform: rotate(45deg) translate(2px, 2px);
+    }
+    #sidebarCollapse.active span:nth-of-type(2) {
+        opacity: 0;
+    }
+    #sidebarCollapse.active span:last-of-type {
+        transform: rotate(-45deg) translate(1px, -1px);
+    }
+}
+body {
+    background: rgb(39,86,96);
+    background: linear-gradient(120deg, rgba(39,86,96,1) 7%, rgba(6,36,46,1) 38%, rgba(31,63,65,1) 99%);
+    color: white;
+    font-family: 'Mada', sans-serif;
+}
+#sidebarCollapse {
+    background-color: transparent;
+    color: gray;
+}
+#sidebar {
+    background: rgb(7,20,24);
+    background: linear-gradient(90deg, rgba(7,20,24,1) 5%, rgba(6,36,46,1) 100%);
+    box-shadow: 5px 10px 18px rgb(7,20,24);
+    border-right: solid 1px rgb(29, 29, 29);
+}
+.list-group-item {
+    text-transform:capitalize;
+    border: transparent;
+    background: linear-gradient(90deg, rgba(7,20,24,1) 5%, rgba(6,36,46,1) 100%);
+    color:rgb(238, 228, 228);
+    font-size: 14px;
+}
+.list-group-item:hover{
+    text-align: center;
+    color:gray;
+}
+p {
+    padding-top: 20px;
+    font-size: 20px;
+    color: #f50;
+    font-family: 'Mada', sans-serif;
+    background: none;
+ 
+}
+
+.btn {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background: #f50;
+    padding: 10px;
+    border-radius: 6px;
+    display: inline-block;
+    border: none;
+    transition: all 0.4s ease 0s;
+    font-size: 15px;
+    font-family: 'Mada', sans-serif;
+    font-weight: bold;
+   
+    }
+.btn:hover{
+    background: #434343;
+    letter-spacing: 1px;
+    -webkit-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    -moz-box-shadow: 0px 5px 40px -10px rgba(0,0,0,0.57);
+    box-shadow: 5px 40px -10px rgba(0,0,0,0.57);
+    transition: all 0.4s ease 0s;
+}
+h2 {
+    text-align: left;
+    font-weight: bold;
+}
+h3 {
+    text-align: center;
+    padding-top: 18px;
+    font-size: 30px;
+    color: rgb(233, 233, 233);
+}
+h5 {
+    color: black;
+}
+.nav-link {
+    color: rgb(7,20,24);
+    font-size: 20px;
+}
+#first-artist {
+    font-size: 30px;
+    font-family: 'Mada', sans-serif;
+    font-weight: bold;
+}
+#navheader {
+    background: white;
+    box-shadow: 5px 10px 18px rgb(7,20,24);
+}
+footer {
+    background-color: none;
+    color: gray;
+    text-align: center;
+    width: auto;
+    height: 30px;
+}
+#clearHistory, #clearLiked {
+background: none;
+border: 1px solid gray;
+width: 150px;
+}
+

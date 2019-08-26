@@ -1,62 +1,303 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 
 <head>
-  <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> 
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="assets/css/style.css" media="screen">
-  <meta charset="UTF-8">
-  <title>Project1</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>media player</title>
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css"
+        integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY"
+        crossorigin="anonymous"></script>
+
+    <!--Google Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Mada&display=swap" rel="stylesheet">
+
+    <!--Animate Library-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
+    <!--Container-->
+    <div class="wrapper">
 
-    <!--Header-->
-    <div class="jumbotron jumbotron-fluid">
-        <div class="container">
-          <h1 class="display-4">music player</h1>
-        </div>
-    </div>
-     <!--Search Bar-->
-    <nav class="navbar navbar-dark">
-        <div class ="container">
-          <div class ="row"> 
-            <div class ="col-md-12">
-              <form class="form-inline">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
-            </form>
-          </nav>
-        </div>
-      </div>
-    <!--Side Bar Storage-->
-    <div class ="container">
-     <div class ="row">
-        <div class ="col-md-2">
-          <h4>Library</h4>
-       <ul class="list-group" id="recently">Recently Liked Artist
-            <li class="list-group-item">Bon Iver</li>
-            <li class="list-group-item">Jump Little Children</li>
-            <li class="list-group-item">Ray LaMontagne</li>
-            <li class="list-group-item">Local Natives</li>
-          </ul>
-        <ul class="list-group" id="history">Search History
-            <li class="list-group-item">Jason Aldean</li>
-            <li class="list-group-item">Bon Iver</li>
-            <li class="list-group-item">Dr. Dog</li>
-            <li class="list-group-item">The Japanese House</li>
-          </ul>
-        </div>
-    <!--Instructions Div-->
-     <div class ="col-md-10">
-     <div class="card">
-        <div class="card-body">
-            This is where the div page goes    
-        </div>
-    </div>
-   
+        <!-- Sidebar -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Project 1 &nbsp;<i class=" fas fa-music"></i>
+                </h3>
+            </div>
+
+            <!--Sidebar w/ Search History and Liked Artists -->
+            <ul class="list-unstyled components">
+                <p>Search History &nbsp;<i class="fas fa-search"></i></p>
+                <div class="list-group">
+                    <a id="here"></a>
+                    <p><button class="btn btn-outline-secondary" id="clearHistory">Clear History</button></p>
+                </div>
+                <br>
+                <p>Liked Artist &nbsp;<i class="fas fa-heart"></i> </p>
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">Kasey Musgraves</a>
+                    <a href="#" class="list-group-item list-group-item-action">Cold War Kids</a>
+                    <a href="#" class="list-group-item list-group-item-action">Jason Aldean</a>
+                    <a href="#" class="list-group-item list-group-item-action">Qveen Herby</a>
+                    <a id="hereAgain"></a>
+                    <p><button class="btn btn-outline-secondary" id="clearLiked">Clear Liked</button></p>
+                </div>
+        </nav>
+
+        <!-- Header Navigation -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg" id="navheader">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="navbar-btn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+
+                    <!-- Header Nav Toggle -->
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+
+                    <!-- Header Nav w/Home & Share-->
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">HOME</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">SHARE</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <br>
+
+
+            <!--Search Bar-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                    </div>
+                    <div class="col-sm">
+                        <form class="form-inline mr-auto">
+                            <input class="form-control mr-sm-2" id="input" type="text" placeholder="start typing..."
+                                aria-label="Search">
+                            <button class="btn btn-outline-success btn-rounded btn-sm my-0" id="search"
+                                type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="col-sm">
+                    </div>
+                </div>
+            </div>
+
+
+            <!--First Artist Section-->
+            <div class="row">
+                <div class="col-lg">
+                    <div>
+                        <div class="col-lg">
+                            <div>
+                                <div class="col-lg">
+                                    <div>
+                                        <div class="col-lg">
+                                            <div>
+
+                                                <div class="card-body">
+                                                    <h4 id="first-artist"></h4>
+                                                    <iframe width="100%" height="300" scrolling="no" frameborder="no"
+                                                        allow="autoplay"
+                                                        src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/users/1624404&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
+                                                    <a href="#" class="btn btn-light" id="liked"> Add to Liked</a>
+                                                </div>
+
+                                                <br>
+
+                                                <!--Related Artists Section -->
+                                                <div class="row">
+                                                    <div class="col-lg">
+                                                        <div>
+                                                            <div class="col-lg">
+                                                                <div>
+                                                                    <div class="col-lg">
+                                                                        <div>
+
+                                                                            <h2>Related Artist</h2>
+                                                                            <div class="card-deck">
+                                                                                <div class="card">
+                                                                                    <img class="card-img-top"
+                                                                                        src="https://www.billboard.com/files/styles/article_main_image/public/media/ray-lamontagne-wesley-mann-03-billboard-650.jpg"
+                                                                                        style="height: auto"
+                                                                                        alt="Card image cap"
+                                                                                        class="rounded-0">
+                                                                                    <div class="card-body">
+                                                                                        <h5 class="card-title">Ray
+                                                                                            LaMontagne</h5>
+                                                                                        <p class="card-text"><small
+                                                                                                class="text-muted"></small>
+                                                                                        </p>
+                                                                                        <a href="#"
+                                                                                            class="btn btn-light"
+                                                                                            style="text-align: center;">Listen</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card">
+                                                                                    <img class="card-img-top"
+                                                                                        src="https://happymag.tv/wp-content/uploads/2019/08/bon-iver.jpg"
+                                                                                        style="height: auto"
+                                                                                        alt="Card image cap">
+                                                                                    <div class="card-body">
+                                                                                        <h5 class="card-title">Bon Iver
+                                                                                        </h5>
+                                                                                        <p class="card-text"><small
+                                                                                                class="text-muted"></small>
+                                                                                        </p>
+                                                                                        <a href="#"
+                                                                                            class="btn btn-light"
+                                                                                            style="text-align: center;">Listen</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card">
+                                                                                    <img class="card-img-top"
+                                                                                        src="https://i.pinimg.com/originals/4c/30/59/4c30595a987fd926a3708cce60960b55.jpg"
+                                                                                        style="height: auto"
+                                                                                        alt="Card image cap">
+                                                                                    <div class="card-body">
+                                                                                        <h5 class="card-title">Japanese
+                                                                                            House</h5>
+                                                                                        <p class="card-text"><small
+                                                                                                class="text-muted"></small>
+                                                                                        </p>
+                                                                                        <a href="#"
+                                                                                            class="btn btn-light"
+                                                                                            style="text-align: center;">Listen</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card">
+                                                                                    <img class="card-img-top"
+                                                                                        src="http://rocktotick.com/wp-content/uploads/2015/11/Dr.-Dog-Tickets.jpg"
+                                                                                        style="height: auto"
+                                                                                        alt="Card image cap">
+                                                                                    <div class="card-body">
+                                                                                        <h5 class="card-title">Dr. Dog
+                                                                                        </h5>
+                                                                                        <p class="card-text"><small
+                                                                                                class="text-muted"></small>
+                                                                                        </p>
+                                                                                        <a href="#"
+                                                                                            class="btn btn-light"
+                                                                                            style="text-align: center;">Listen</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="card">
+                                                                                    <img class="card-img-top"
+                                                                                        src="https://static.wixstatic.com/media/ecff2c_61fd6da8069d43c196f47c10d5ece2e9~mv2_d_2755_4097_s_4_2.png/v1/fill/w_600,h_892,al_c,q_85,usm_0.66_1.00_0.01/vignettegirl.webp"
+                                                                                        style="height: 120px; width: 120px; align-content: center;"
+                                                                                        alt="Card image cap">
+                                                                                    <div class="card-body">
+                                                                                        <h5 class="card-title">Qveen
+                                                                                            Herby</h5>
+                                                                                        <p class="card-text"><small
+                                                                                                class="text-muted"></small>
+                                                                                        </p>
+                                                                                        <a href="#"
+                                                                                            class="btn btn-light"
+                                                                                            style="text-align: center;">Listen</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+
+                                                                        <br>
+                                                                        <br>
+                                                                        <br>
+
+                                                                        <!--Removable-->
+                                                                        <div class="row">
+                                                                            <div class="col-sm-6">
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <h5 class="card-title">We could
+                                                                                            put something here?</h5>
+                                                                                        <p class="card-text">With
+                                                                                            supporting text below as a
+                                                                                            natural lead-in to
+                                                                                            additional content.</p>
+                                                                                        <a href="#"
+                                                                                            class="btn btn-primary">Go
+                                                                                            somewhere</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="col-sm-6">
+                                                                                <div class="card">
+                                                                                    <div class="card-body">
+                                                                                        <h5 class="card-title">Special
+                                                                                            title treatment</h5>
+                                                                                        <p class="card-text">With
+                                                                                            supporting text below as a
+                                                                                            natural lead-in to
+                                                                                            additional content.</p>
+                                                                                        <a href="#"
+                                                                                            class="btn btn-primary">Go
+                                                                                            somewhere</a>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <br>
+                                                                        <!--Footer-->
+                                                                        <footer>Copywright &copy; 2019</footer>
+                                                                    </div>
+
+                                                                    <!-- Firebase References -->
+                                                                    <script
+                                                                        src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+                                                                    <script
+                                                                        src="https://www.gstatic.com/firebasejs/6.4.1/firebase-database.js"></script>
+
+                                                                    <!-- jQuery CDN - Slim version (=without AJAX) -->
+                                                                    <script
+                                                                        src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                                                                        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                                                                        crossorigin="anonymous"></script>
+                                                                    <!-- Popper.JS -->
+                                                                    <script
+                                                                        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"
+                                                                        integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ"
+                                                                        crossorigin="anonymous"></script>
+                                                                    <!-- Bootstrap JS -->
+                                                                    <script
+                                                                        src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"
+                                                                        integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm"
+                                                                        crossorigin="anonymous"></script>
+
+                                                                    <!--  JS -->
+                                                                    <script src="Project-1--Option-B/logic.js"></script>
+
+
 </body>
 
 </html>
