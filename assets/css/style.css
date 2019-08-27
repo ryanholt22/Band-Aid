@@ -90,7 +90,7 @@
 body {
     background: rgb(39,86,96);
     background: linear-gradient(120deg, rgba(39,86,96,1) 7%, rgba(6,36,46,1) 38%, rgba(31,63,65,1) 99%);
-    color: white;
+      color: white;
     font-family: 'Mada', sans-serif;
 }
 #sidebarCollapse {
