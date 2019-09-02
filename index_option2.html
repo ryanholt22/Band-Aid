@@ -19,17 +19,13 @@
     <header class="#000000 black">
         <!-- navbar content here  -->
         <nav>
-            <div class="nav-wrapper #212121 grey darken-4 z-depth-4">
-                <a href="#!" class="brand-logo"><img src="https://drive.google.com/file/d/1e4OPy2ryy0JzLI1k6VgxkoM-f2dnn21N/view?usp=sharing" style="width:25%;"></a>
+            <div class="nav-wrapper #212121 grey darken-4">
+                <a href="#!" class="brand-logo center"><img src="assets/images/logo-black.png" style="width:20%"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="">Liked Artists</a></li>
-                    <li><a href="">Recently Viewed</a></li>
-                    <li><a href=""><i class="material-icons">whatshot</i></a></li>
 
-                </ul>
             </div>
         </nav>
+
 
     </header>
 
@@ -39,107 +35,108 @@
         <a id="menu" class="waves-effect waves-light btn btn-floating #000000 black"></a>
 
         <!-- Tap Target Structure -->
-        <div class="tap-target #ff7043 deep-orange lighten-1" data-target="menu">
+        <div class="tap-target #eeff41 lime accent-2" data-target="menu">
             <div class="tap-target-content">
-                <h5 style="color:white">Title</h5>
-                <p style="color:white">A bunch of text</p>
+                <h5 style="color:black">Title</h5>
+                <p style="color:black">A bunch of text</p>
             </div>
         </div>
     </div>
-    <br></br>
 
     <!-- Main Page Content DO NOT DELETE -->
+    <main>
+        <!-- SLIDE OUT SIDE NAV -->
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img src="assets/images/logo-yellow.png">
+                    </div>
+                    <a href="#user"><img class="circle" src="assets/images/logo-black.png"></a>
+                    <a href="#name"><span class="white-text name">John Doe</span></a>
+                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+                </div>
+            </li>
+            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
+            <li><a href="#!">Second Link</a></li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li><a class="subheader">Subheader</a></li>
+            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+        </ul>
+        <a href="#" style="color:white;" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
-    <!-- SIDE CONTENT PANEL-->
-    <div class="row">
-        <div class="col s12 m2 l2">
-            <br></br>
-            <div class="container white-text">
-                <!--Sidebar w/ Search History and Liked Artists -->
-                <ul class="list-unstyled components">
-                    <p>Search History &nbsp;<i class="fas fa-search"></i></p>
-                    <div class="list-group">
-                        <a id="here"></a>
-                        <p><button class="btn btn-outline-secondary" id="clearHistory">Clear History</button></p>
-                    </div>
-                    <br>
-                    <p>Liked Artist &nbsp;<i class="fas fa-heart"></i> </p>
-                    <div class="list-group">
-                        <a id="hereAgain"></a>
-                        <p><button class="btn btn-outline-secondary" id="clearLiked">Clear Liked</button></p>
-                    </div>
-                    </nav>
-                    <br></br>
-            </div>
-        </div>
 
 
         <!-- MAIN CONTENT PANEL -->
         <!-- Search Bar -->
-        <div class="col s12 m10 l10">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm">
-                    </div>
-                    <div class="col-sm">
-                        <form class="form-inline mr-auto">
-                            <input class="form-control mr-sm-2 white-text" id="input" type="text" placeholder="start typing..." aria-label="Search">
-                            <button class="btn btn-outline-success btn-rounded btn-sm my-0" id="search" type="submit">Search</button>
-                        </form>
-                    </div>
-                    <div class="col-sm">
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-lg center-align">
-                    <h4 style="color:white" id="artist"></h4>
-                    <br></br>
-
-                    <img class="img-responsive" style="max-width:400px" src="assets/images/band-aid.jpg">
-
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="container">
                     <div class="row">
-                        <iframe id = "audio" src="" frameborder="0"></iframe>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg">
-                            <a class="waves-effect waves-dark btn #ff5722 deep-orange" id="liked"><i class="material-icons">thumb_up</i></a>
-                            <a class="waves-effect waves-dark btn #ff5722 deep-orange" id="disliked"><i class="material-icons">thumb_down</i></a>
-                            <a class="waves-effect waves-dark btn #ff5722 deep-orange" onclick="$('.tap-target').tapTarget('open')" id="lyrics">Show me the Lyrics</a>
+                        <div class="col-sm">
+                        </div>
+                        <div class="col-sm">
+                            <form class="form-inline mr-auto">
+                                <input class="form-control mr-sm-2 white-text" id="input" type="text" placeholder="start typing..." aria-label="Search">
+                                <button class="waves-effect waves-dark btn #eeff41 lime accent-2 black-text" id="search" type="submit">Search</button>
+                            </form>
+                        </div>
+                        <div class="col-sm">
                         </div>
                     </div>
+
+
+                    <div class="row">
+                        <div class="col s12 m12 l12 center-align">
+                            <h4 style="color:white" id="artist"></h4>
+                            <br></br>
+
+                            <img class="img-responsive" style="max-width:400px" src="assets/images/logo-black.png">
+
+                            <div class="row">
+                                <iframe id="audio" src="" frameborder="0"></iframe>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg">
+                                    <a class="waves-effect waves-dark btn #eeff41 lime accent-2 black-text" id="liked"><i class="material-icons">thumb_up</i></a>
+                                    <a class="waves-effect waves-dark btn #eeff41 lime accent-2 black-text" id="disliked"><i class="material-icons">thumb_down</i></a>
+                                    <a class="waves-effect waves-dark btn #eeff41 lime accent-2 black-text" onclick="$('.tap-target').tapTarget('open')" id="lyrics">Show me the Lyrics</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <!-- carousel content here -->
+
+                    <div class="carousel">
+                        <h5 id="similar-artists" class="white-text"></h5>
+                        <a class="carousel-item #eeff41 lime accent-2" href="#one!" style="z-index: -2; opacity: 0.2; visibility: visible; transform: translateX(118px) translateY(100px) translateX(-400px) translateZ(-400px);">
+                            <img src="assets/images/rockandroll.jpg">
+                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                        </a>
+                        <a class="carousel-item #eeff41 lime accent-2" href="#two!" style="transform: translateX(118px) translateY(100px) translateX(-200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
+                            <img src="assets/images/pop.jpg">
+                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                        </a>
+                        <a class="carousel-item active #eeff41 lime accent-2" href="#three!" style="transform: translateX(118px) translateY(100px) translateX(0px) translateX(0px) translateZ(0px); z-index: 0; opacity: 1; visibility: visible;">
+                            <img src="assets/images/rockandroll.jpg">
+                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                        </a>
+                        <a class="carousel-item #eeff41 lime accent-2" href="#four!" style="transform: translateX(118px) translateY(100px) translateX(200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
+                            <img src="assets/images/pop.jpg">
+                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                        </a>
+                        <a class="carousel-item #eeff41 lime accent-2" href="#five!" style="transform: translateX(118px) translateY(100px) translateX(400px) translateZ(-400px); z-index: -2; opacity: 0.2; visibility: visible;">
+                            <img src="assets/images/rockandroll.jpg">
+                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                        </a>
+                    </div>
                 </div>
             </div>
-
-
-            <!-- carousel content here -->
-
-            <div class="carousel">
-                <h5 id="similar-artists" class="white-text"></h5>
-                <a class="carousel-item #ff5722 deep-orange" href="#one!" style="z-index: -2; opacity: 0.2; visibility: visible; transform: translateX(118px) translateY(100px) translateX(-400px) translateZ(-400px);">
-                    <img src="assets/images/rockandroll.jpg">
-                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
-                <a class="carousel-item #ff5722 deep-orange" href="#two!" style="transform: translateX(118px) translateY(100px) translateX(-200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
-                    <img src="assets/images/pop.jpg">
-                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
-                <a class="carousel-item active #ff5722 deep-orange" href="#three!" style="transform: translateX(118px) translateY(100px) translateX(0px) translateX(0px) translateZ(0px); z-index: 0; opacity: 1; visibility: visible;">
-                    <img src="assets/images/rockandroll.jpg">
-                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
-                <a class="carousel-item #ff5722 deep-orange" href="#four!" style="transform: translateX(118px) translateY(100px) translateX(200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
-                    <img src="assets/images/pop.jpg">
-                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
-                <a class="carousel-item #ff5722 deep-orange" href="#five!" style="transform: translateX(118px) translateY(100px) translateX(400px) translateZ(-400px); z-index: -2; opacity: 0.2; visibility: visible;">
-                    <img src="assets/images/rockandroll.jpg">
-                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
-            </div>
         </div>
-    </div>
 
     </main>
 
