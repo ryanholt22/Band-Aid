@@ -8,7 +8,7 @@
     <script src="assets/Javascript/4.js"></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen" />
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript" src="assets/Javascript/materialize.min.js"></script>
@@ -20,7 +20,7 @@
         <!-- navbar content here  -->
         <nav>
             <div class="nav-wrapper #212121 grey darken-4">
-                <a href="#!" class="brand-logo center"><img src="assets/images/logo-black.png" style="width:20%"></a>
+                <a href="#!" class="brand-logo center"><img src="assets/images/logo-yellow.png" style="width:20%"></a>
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
             </div>
@@ -52,95 +52,108 @@
                     <div class="background">
                         <img src="assets/images/logo-yellow.png">
                     </div>
+                    <br></br>
                     <a href="#user"><img class="circle" src="assets/images/logo-black.png"></a>
-                    <a href="#name"><span class="white-text name">John Doe</span></a>
-                    <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
                 </div>
             </li>
-            <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li>
-            <li><a href="#!">Second Link</a></li>
-            <li>
-                <div class="divider"></div>
-            </li>
-            <li><a class="subheader">Subheader</a></li>
-            <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            <div class="container">
+                <li>
+                    <h5>
+                        <p>SEARCH HISTORY &nbsp;<i class="fas fa-search"></i></p>
+                    </h5>
+                    <div class="list-group">
+                        <a id="here"></a>
+                        <p><button class="waves-effect waves-light btn #212121 grey darken-4" id="clearHistory">Clear History</button></p>
+                    </div>
+                </li>
+                <li>
+                    <h5>
+                        <p>LIKED ARTISTS &nbsp;<i class="fas fa-heart"></i> </p>
+                    </h5>
+                    <div class="list-group">
+                        <a id="hereAgain"></a>
+                        <p><button class="waves-effect waves-light btn #212121 grey darken-4" id="clearLiked">Clear Liked</button></p>
+                    </div>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+            </div>
         </ul>
         <a href="#" style="color:white;" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
 
 
-        <!-- MAIN CONTENT PANEL -->
-        <!-- Search Bar -->
+        <!-- CONTENT PANEL -->
+
+        <!-- SEARCH BAR -->
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm">
-                        </div>
-                        <div class="col-sm">
+                        <div class="col-lg">
                             <form class="form-inline mr-auto">
-                                <input class="form-control mr-sm-2 white-text" id="input" type="text" placeholder="start typing..." aria-label="Search">
+                                <input class="form-control mr-sm-2 white-text" id="input" type="text" placeholder="START TYPING..." aria-label="Search">
                                 <button class="waves-effect waves-dark btn #eeff41 lime accent-2 black-text" id="search" type="submit">Search</button>
                             </form>
                         </div>
-                        <div class="col-sm">
-                        </div>
                     </div>
 
-
+                    <!-- BAND IMAGE -->
                     <div class="row">
                         <div class="col s12 m12 l12 center-align">
                             <h4 style="color:white" id="artist"></h4>
                             <br></br>
-
                             <img class="img-responsive" style="max-width:400px" src="assets/images/logo-black.png">
-
+                            <br></br>
+                            <!-- LIKE, DISLIKE, LYRICS BUTTONS -->
                             <div class="row">
-                                <iframe id="audio" src="" frameborder="0"></iframe>
-                            </div>
-                            <div class="row">
-                                <div class="col-lg">
+                                <div class="col s12 m12 l12">
                                     <a class="waves-effect waves-dark btn #eeff41 lime accent-2 black-text" id="liked"><i class="material-icons">thumb_up</i></a>
                                     <a class="waves-effect waves-dark btn #eeff41 lime accent-2 black-text" id="disliked"><i class="material-icons">thumb_down</i></a>
                                     <a class="waves-effect waves-dark btn #eeff41 lime accent-2 black-text" onclick="$('.tap-target').tapTarget('open')" id="lyrics">Show me the Lyrics</a>
+                                    <!-- AUDIO -->
+                                    <div class="row">
+                                        <iframe style="height:100px;" id="audio" src="" frameborder="0"></iframe>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </div>
 
 
-                    <!-- carousel content here -->
-
-                    <div class="carousel">
-                        <h5 id="similar-artists" class="white-text"></h5>
-                        <a class="carousel-item #eeff41 lime accent-2" href="#one!" style="z-index: -2; opacity: 0.2; visibility: visible; transform: translateX(118px) translateY(100px) translateX(-400px) translateZ(-400px);">
-                            <img src="assets/images/rockandroll.jpg">
-                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
-                        </a>
-                        <a class="carousel-item #eeff41 lime accent-2" href="#two!" style="transform: translateX(118px) translateY(100px) translateX(-200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
-                            <img src="assets/images/pop.jpg">
-                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
-                        </a>
-                        <a class="carousel-item active #eeff41 lime accent-2" href="#three!" style="transform: translateX(118px) translateY(100px) translateX(0px) translateX(0px) translateZ(0px); z-index: 0; opacity: 1; visibility: visible;">
-                            <img src="assets/images/rockandroll.jpg">
-                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
-                        </a>
-                        <a class="carousel-item #eeff41 lime accent-2" href="#four!" style="transform: translateX(118px) translateY(100px) translateX(200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
-                            <img src="assets/images/pop.jpg">
-                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
-                        </a>
-                        <a class="carousel-item #eeff41 lime accent-2" href="#five!" style="transform: translateX(118px) translateY(100px) translateX(400px) translateZ(-400px); z-index: -2; opacity: 0.2; visibility: visible;">
-                            <img src="assets/images/rockandroll.jpg">
-                            <h6 style="text-align: center; color:black;">BAND NAME</h6>
-                        </a>
-                    </div>
+                <!-- CAROUSEL CONTENT -->
+                <div class="carousel">
+                    <h5 id="similar-artists" class="white-text"></h5>
+                    <a class="carousel-item #eeff41 lime accent-2" href="#one!" style="z-index: -2; opacity: 0.2; visibility: visible; transform: translateX(118px) translateY(100px) translateX(-400px) translateZ(-400px);">
+                        <img src="assets/images/rockandroll.jpg">
+                        <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                    </a>
+                    <a class="carousel-item #eeff41 lime accent-2" href="#two!" style="transform: translateX(118px) translateY(100px) translateX(-200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
+                        <img src="assets/images/pop.jpg">
+                        <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                    </a>
+                    <a class="carousel-item active #eeff41 lime accent-2" href="#three!" style="transform: translateX(118px) translateY(100px) translateX(0px) translateX(0px) translateZ(0px); z-index: 0; opacity: 1; visibility: visible;">
+                        <img src="assets/images/rockandroll.jpg">
+                        <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                    </a>
+                    <a class="carousel-item #eeff41 lime accent-2" href="#four!" style="transform: translateX(118px) translateY(100px) translateX(200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
+                        <img src="assets/images/pop.jpg">
+                        <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                    </a>
+                    <a class="carousel-item #eeff41 lime accent-2" href="#five!" style="transform: translateX(118px) translateY(100px) translateX(400px) translateZ(-400px); z-index: -2; opacity: 0.2; visibility: visible;">
+                        <img src="assets/images/rockandroll.jpg">
+                        <h6 style="text-align: center; color:black;">BAND NAME</h6>
+                    </a>
                 </div>
             </div>
+        </div>
         </div>
 
     </main>
 
-    <!-- Footer Content DO NOT DELETE -->
+    <!-- FOOTER CONTENT -->
     <footer class="page-footer #212121 grey darken-4">
         <div class="container #212121 grey darken-4">
             <div class="row #212121 grey darken-4">
