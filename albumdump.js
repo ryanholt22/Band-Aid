@@ -6,8 +6,6 @@ $(document).on("click", ".gems", function () {
     var music = {}
     var band;
     var limit = 10;
-    var llimit = 0;
-    var genres = [];
 
     $.ajax({
         url: q2,
@@ -20,7 +18,7 @@ $(document).on("click", ".gems", function () {
         music.album = thing.collectionName
         music.song = thing.trackName
         music.genre = thing.primaryGenreName
-        band = JSON.stringify(music.artist + " " + music.song);//entity=allArtist&attribute=allArtistTerm
+        band = JSON.stringify(music.artist + " " + music.song);
         band = band.replace(/ /g, "+")
         band = band.replace(/"/g, "")
         //console.log(music.genre)
@@ -41,7 +39,6 @@ $(document).on("click", ".gems", function () {
                     var w = ("<img src = '" + thing2.results[q].artworkUrl60 + "'>")
                     $("#itunes").append(w)
                     limit = limit + 10;
-
                 }
             }
         })
