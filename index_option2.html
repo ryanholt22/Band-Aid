@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Project1 - Phase2</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link type="text/css" rel="stylesheet" href="assets/css/materialize.css" media="screen,projection" />
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+
+</head>
+
+<body class="#000000 black">
+    <!-- Header Content DO NOT DELETE -->
+    <header class="#000000 black">
+        <!-- navbar content here  -->
+        <nav>
+            <div class="nav-wrapper #212121 grey darken-4 z-depth-4">
+                <a href="#!" class="brand-logo"><img src="assets/images/band-aid.jpg" style="width:25%;"></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="">Liked Artists</a></li>
+                    <li><a href="">Recently Viewed</a></li>
+                    <li><a href=""><i class="material-icons">whatshot</i></a></li>
+
+                </ul>
+            </div>
+        </nav>
+
+    </header>
+
+    <!-- UPPER RIGHT TARGET -->
+    <!-- Element Showed -->
+    <div class="right">
+        <a id="menu" class="waves-effect waves-light btn btn-floating #000000 black"></a>
+
+        <!-- Tap Target Structure -->
+        <div class="tap-target #ff7043 deep-orange lighten-1" data-target="menu">
+            <div class="tap-target-content">
+                <h5 style="color:white">Title</h5>
+                <p style="color:white">A bunch of text</p>
+            </div>
+        </div>
+    </div>
+    <br></br>
+
+    <!-- Main Page Content DO NOT DELETE -->
+
+    <!-- SIDE CONTENT PANEL-->
+    <div class="row">
+        <div class="col s12 m2 l2">
+            <br></br>
+            <div class="container white-text">
+                <!--Sidebar w/ Search History and Liked Artists -->
+                <ul class="list-unstyled components">
+                    <p>Search History &nbsp;<i class="fas fa-search"></i></p>
+                    <div class="list-group">
+                        <a id="here"></a>
+                        <p><button class="btn btn-outline-secondary" id="clearHistory">Clear History</button></p>
+                    </div>
+                    <br>
+                    <p>Liked Artist &nbsp;<i class="fas fa-heart"></i> </p>
+                    <div class="list-group">
+                        <a id="hereAgain"></a>
+                        <p><button class="btn btn-outline-secondary" id="clearLiked">Clear Liked</button></p>
+                    </div>
+                    </nav>
+                    <br></br>
+            </div>
+        </div>
+
+
+        <!-- MAIN CONTENT PANEL -->
+        <!-- Search Bar -->
+        <div class="col s12 m10 l10">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm">
+                    </div>
+                    <div class="col-sm">
+                        <form class="form-inline mr-auto">
+                            <input class="form-control mr-sm-2 white-text" id="input" type="text" placeholder="start typing..." aria-label="Search">
+                            <button class="btn btn-outline-success btn-rounded btn-sm my-0" id="search" type="submit">Search</button>
+                        </form>
+                    </div>
+                    <div class="col-sm">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-lg center-align">
+                    <h4 style="color:white" id="artist"></h4>
+                    <br></br>
+
+                    <img class="img-responsive" style="max-width:400px" src="assets/images/band-aid.jpg">
+
+                    <div class="row">
+                        <iframe src="https://audio-ssl.itunes.apple.com/itunes-assets/Music/94/68/61/mzm.wzvvfmiu.aac.p.m4a" frameborder="0"></iframe>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg">
+                            <a class="waves-effect waves-dark btn #ff5722 deep-orange" id="liked"><i class="material-icons">thumb_up</i></a>
+                            <a class="waves-effect waves-dark btn #ff5722 deep-orange" id="disliked"><i class="material-icons">thumb_down</i></a>
+                            <a class="waves-effect waves-dark btn #ff5722 deep-orange" onclick="$('.tap-target').tapTarget('open')" id="lyrics">Show me the Lyrics</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- carousel content here -->
+
+            <div class="carousel">
+                <h5 id="similar-artists" class="white-text"></h5>
+                <a class="carousel-item #ff5722 deep-orange" href="#one!" style="z-index: -2; opacity: 0.2; visibility: visible; transform: translateX(118px) translateY(100px) translateX(-400px) translateZ(-400px);">
+                    <img src="assets/images/rockandroll.jpg">
+                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
+                </a>
+                <a class="carousel-item #ff5722 deep-orange" href="#two!" style="transform: translateX(118px) translateY(100px) translateX(-200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
+                    <img src="assets/images/pop.jpg">
+                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
+                </a>
+                <a class="carousel-item active #ff5722 deep-orange" href="#three!" style="transform: translateX(118px) translateY(100px) translateX(0px) translateX(0px) translateZ(0px); z-index: 0; opacity: 1; visibility: visible;">
+                    <img src="assets/images/rockandroll.jpg">
+                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
+                </a>
+                <a class="carousel-item #ff5722 deep-orange" href="#four!" style="transform: translateX(118px) translateY(100px) translateX(200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
+                    <img src="assets/images/pop.jpg">
+                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
+                </a>
+                <a class="carousel-item #ff5722 deep-orange" href="#five!" style="transform: translateX(118px) translateY(100px) translateX(400px) translateZ(-400px); z-index: -2; opacity: 0.2; visibility: visible;">
+                    <img src="assets/images/rockandroll.jpg">
+                    <h6 style="text-align: center; color:white;">BAND NAME</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    </main>
+
+    <!-- Footer Content DO NOT DELETE -->
+    <footer class="page-footer #212121 grey darken-4">
+        <div class="container #212121 grey darken-4">
+            <div class="row #212121 grey darken-4">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright #212121 grey darken-4">
+            <div class="container white-text">
+                © 2019 Copyright WeAreNumber4
+                <a class="white-text right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FIREBASE -->
+    <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.4.1/firebase-database.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="assets/firebase/init.js"></script>
+
+</body>
+
+</html>
