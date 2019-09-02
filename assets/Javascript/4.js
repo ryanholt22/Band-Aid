@@ -7,7 +7,7 @@ $(document).on("click", "#search", function () {
   //event.preventDefault();
   var input = $("#input").val();
   var queryURL; //= "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=" + movie + "&key=AIzaSyDdG-co-zolXTJoNeRYFwE2f7L4qLDVRCY"
-  var q2 = "https://itunes.apple.com/search?term=" + input + "&limit=5"
+  var q2 = "https://itunes.apple.com/search?term=" + input + "&limit=1"
   var music = {}
   var suggest = {}
   var band;
@@ -19,36 +19,25 @@ $(document).on("click", "#search", function () {
   $.ajax({
     url: q2,
     method: "GET"
-  }).then(function (res) {
-    var tune = JSON.parse(res);
+  }).then(function (response) {
+    var tune = JSON.parse(response);
     tune = tune.results;
     for (var w = 0; w < tune.length; w++) {
-      var wholediv = $("<div class = 'box'>");
-      var u = ("<img src = '" + tune[w].artworkUrl100 + "'>")
+      var u = (tune[w].artworkUrl100)
       var i = document.createElement("audio");
       i.setAttribute("src", tune[w].previewUrl);
-      wholediv.prepend(u);
-      wholediv.prepend(i);
+      $(".img-responsive").attr('src', u)
       music.artist = tune[w].artistName
       music.album = tune[w].collectionName
       music.song = tune[w].trackName
       music.genre = tune[w].primaryGenreName
       music.track = tune[w].previewUrl
-      var p1 = ("<p class = artist>" + music.artist + "</p>") // sets artist name text to html
-      var p2 = ("<p class = song>" + music.song + "</p>") // sets song name text to html
-      wholediv.prepend(p1);
-      wholediv.prepend(p2);
-      band = JSON.stringify(music.artist + " " + music.song);//entity=allArtist&attribute=allArtistTerm
-      band = band.replace(/ /g, "+")
-      band = band.replace(/"/g, "")
-      searchList.push(band)
-      console.log(music)
-      $("#view").after(wholediv); //search div appended includs audio, image, and hidden <p> tags with artist and song
-      $(".artist").css('visibility', 'hidden');
-      $(".song").css('visibility', 'hidden');
-      if (w === 4) {
-        //console.log(searchList)
-      }
+      $("#artist").text(music.artist)
+      $("#audio").attr('src', music.track)
+      // band = JSON.stringify(music.artist + " " + music.song);//entity=allArtist&attribute=allArtistTerm
+      // band = band.replace(/ /g, "+")
+      // band = band.replace(/"/g, "")
+      //$(".song").css('visibility', 'hidden');
     }
   }).then(function () {
     var q3 = "https://itunes.apple.com/search?term=" + music.genre + "&limit=" + limit;
@@ -84,10 +73,12 @@ $(document).on("click", "#search", function () {
           $(".artist").css('visibility', 'hidden');
           $(".song").css('visibility', 'hidden');
           max++;
+          
         }
       }
     })
   })
+  $("#input").val("");
 })
 $(document).on("click", ".box", function () {
   var y = lyricsArray[2];
