@@ -3,11 +3,11 @@ var partist = [];
 var psong = [];
 var lyricsArray = [];
 var id;
-$(document).on("click", ".gems", function () {
+$(document).on("click", "#search", function () {
   //event.preventDefault();
-  var movie = $("#movie-input").val();
+  var input = $("#input").val();
   var queryURL; //= "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=" + movie + "&key=AIzaSyDdG-co-zolXTJoNeRYFwE2f7L4qLDVRCY"
-  var q2 = "https://itunes.apple.com/search?term=" + movie + "&limit=5"
+  var q2 = "https://itunes.apple.com/search?term=" + input + "&limit=5"
   var music = {}
   var suggest = {}
   var band;
@@ -42,6 +42,7 @@ $(document).on("click", ".gems", function () {
       band = band.replace(/ /g, "+")
       band = band.replace(/"/g, "")
       searchList.push(band)
+      console.log(music)
       $("#view").after(wholediv); //search div appended includs audio, image, and hidden <p> tags with artist and song
       $(".artist").css('visibility', 'hidden');
       $(".song").css('visibility', 'hidden');
