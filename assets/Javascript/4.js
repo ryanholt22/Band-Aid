@@ -29,6 +29,7 @@ $(document).on("click", "#search", function () {
       music.track = tune[w].previewUrl
       $("#artist").text(music.artist)
       $("#audio").attr('src', music.track)
+      $("#song").text(music.song)
     }
   }).then(function () {
     var q3 = "https://itunes.apple.com/search?term=" + music.genre + "&limit=" + limit;
@@ -54,8 +55,23 @@ $(document).on("click", "#search", function () {
   })
   $("#input").val("");
 })
-var d = $(document).find(".n0")
-console.log(d)
+
+$(document).on("click", "#lyrics", function () {
+  var d = $(document).find("#song");
+  var f = $(document).find("#artist");
+  d = d[0].innerHTML;
+  f = f[0].innerHTML;
+  var q4 = ("http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=" + d + "&q_artist=" + f + "&apikey=12211013789810f0dad17f2ba6f9ac3a")
+  $.ajax({
+    url: q4,
+    method: "GET"
+  }).then(function (response) {
+    var lyrics = JSON.parse(response);
+    lyrics = lyrics.message.body.lyrics.lyrics_body;
+    var g = $(document).find("#lyrics")
+    g.text(lyrics);
+  })
+})
 /*$(document).on("click", ".box", function () {
   var y = lyricsArray[2];
   var t = $(this).find("audio");
@@ -77,15 +93,3 @@ console.log(d)
   console.log(lyricsArray)
   return lyricsArray;
 });*/
-
-$(document).on("click", "#lyrics", function () {
-  var q4 = ("http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=" + lyricsArray[1] + "&q_artist=" + lyricsArray[0] + "&apikey=12211013789810f0dad17f2ba6f9ac3a")
-  $.ajax({
-    url: q4,
-    method: "GET"
-  }).then(function (response) {
-    var lyrics = JSON.parse(response);
-    lyrics = lyrics.message.body.lyrics.lyrics_body;
-    $("?").text(lyrics); //text for lyrics
-  })
-})
