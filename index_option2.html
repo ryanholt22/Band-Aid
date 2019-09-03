@@ -37,8 +37,8 @@
         <!-- Tap Target Structure -->
         <div class="tap-target #eeff41 lime accent-2" data-target="menu">
             <div class="tap-target-content">
-                <h5 style="color:black">Title</h5>
-                <p style="color:black">A bunch of text</p>
+                <h5 id="song" style="color:black">Title</h5>
+                <p id="lyrics" style="color:black">A bunch of text</p>
             </div>
         </div>
     </div>
@@ -56,29 +56,32 @@
                     <a href="#user"><img class="circle" src="assets/images/logo-black.png"></a>
                 </div>
             </li>
-            <div class="container">
-                <li>
-                    <h5>
-                        <p>SEARCH HISTORY &nbsp;<i class="fas fa-search"></i></p>
-                    </h5>
-                    <div class="list-group">
-                        <a id="here"></a>
-                        <p><button class="waves-effect waves-light btn #212121 grey darken-4" id="clearHistory">Clear History</button></p>
-                    </div>
+
+
+            <ul class="collection with-header">
+                <li class="collection-header">
+                    <h4>Liked Artists</h4>
                 </li>
-                <li>
-                    <h5>
-                        <p>LIKED ARTISTS &nbsp;<i class="fas fa-heart"></i> </p>
-                    </h5>
-                    <div class="list-group">
-                        <a id="hereAgain"></a>
-                        <p><button class="waves-effect waves-light btn #212121 grey darken-4" id="clearLiked">Clear Liked</button></p>
-                    </div>
+                <div class="list-group">
+                    <li id="hereAgain" class="collection-item"></li>
+                </div>
+                <p><button class="waves-effect waves-light btn #212121 grey darken-4" id="clearLiked">Clear Liked</button></p>
+            </ul>
+
+            <ul class="collection with-header">
+                <li class="collection-header">
+                    <h4>Search History</h4>
                 </li>
-                <li>
-                    <div class="divider"></div>
-                </li>
-            </div>
+                <div class="list-group">
+                    <li id="here" class="collection-item"></li>
+                </div>
+                <p><button class="waves-effect waves-light btn #212121 grey darken-4" id="clearHistory">Clear History</button></p>
+            </ul>
+
+            <li>
+                <div class="divider"></div>
+            </li>
+
         </ul>
         <a href="#" style="color:white;" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
@@ -122,32 +125,32 @@
                     </div>
                 </div>
 
-            <!-- carousel content here -->
+                <!-- carousel content here -->
 
-            <div class="carousel">
-                <h5 id="similar-artists" class="white-text"></h5>
-                <a id = "c0" class="carousel-item #ff5722 deep-orange" href="#one!" style="z-index: -2; opacity: 0.2; visibility: visible; transform: translateX(118px) translateY(100px) translateX(-400px) translateZ(-400px);">
-                    <img class = "i0" src="assets/images/rockandroll.jpg">
-                    <h6 class = "n0" style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
-                <a id = "c1" class="carousel-item #ff5722 deep-orange" href="#two!" style="transform: translateX(118px) translateY(100px) translateX(-200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
-                    <img class = "i1" src="assets/images/pop.jpg">
-                    <h6 class = "n1" style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
-                <a id = "c2" class="carousel-item active #ff5722 deep-orange" href="#three!" style="transform: translateX(118px) translateY(100px) translateX(0px) translateX(0px) translateZ(0px); z-index: 0; opacity: 1; visibility: visible;">
-                    <img class = "i2" src="assets/images/rockandroll.jpg">
-                    <h6 class = "n2" style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
-                <a id = "c3" class="carousel-item #ff5722 deep-orange" href="#four!" style="transform: translateX(118px) translateY(100px) translateX(200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
-                    <img class = "i3" src="assets/images/pop.jpg">
-                    <h6 class = "n3" style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
-                <a id = "c4" class="carousel-item #ff5722 deep-orange" href="#five!" style="transform: translateX(118px) translateY(100px) translateX(400px) translateZ(-400px); z-index: -2; opacity: 0.2; visibility: visible;">
-                    <img class = "i4" src="assets/images/rockandroll.jpg">
-                    <h6 class = "n4" style="text-align: center; color:white;">BAND NAME</h6>
-                </a>
+                <div class="carousel">
+                    <h5 id="similar-artists" class="white-text"></h5>
+                    <a id="c0" class="carousel-item #ff5722 deep-orange" href="#one!" style="z-index: -2; opacity: 0.2; visibility: visible; transform: translateX(118px) translateY(100px) translateX(-400px) translateZ(-400px);">
+                        <img class="i0" src="assets/images/rockandroll.jpg">
+                        <h6 class="n0" style="text-align: center; color:white;">BAND NAME</h6>
+                    </a>
+                    <a id="c1" class="carousel-item #ff5722 deep-orange" href="#two!" style="transform: translateX(118px) translateY(100px) translateX(-200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
+                        <img class="i1" src="assets/images/pop.jpg">
+                        <h6 class="n1" style="text-align: center; color:white;">BAND NAME</h6>
+                    </a>
+                    <a id="c2" class="carousel-item active #ff5722 deep-orange" href="#three!" style="transform: translateX(118px) translateY(100px) translateX(0px) translateX(0px) translateZ(0px); z-index: 0; opacity: 1; visibility: visible;">
+                        <img class="i2" src="assets/images/rockandroll.jpg">
+                        <h6 class="n2" style="text-align: center; color:white;">BAND NAME</h6>
+                    </a>
+                    <a id="c3" class="carousel-item #ff5722 deep-orange" href="#four!" style="transform: translateX(118px) translateY(100px) translateX(200px) translateZ(-200px); z-index: -1; opacity: 0.6; visibility: visible;">
+                        <img class="i3" src="assets/images/pop.jpg">
+                        <h6 class="n3" style="text-align: center; color:white;">BAND NAME</h6>
+                    </a>
+                    <a id="c4" class="carousel-item #ff5722 deep-orange" href="#five!" style="transform: translateX(118px) translateY(100px) translateX(400px) translateZ(-400px); z-index: -2; opacity: 0.2; visibility: visible;">
+                        <img class="i4" src="assets/images/rockandroll.jpg">
+                        <h6 class="n4" style="text-align: center; color:white;">BAND NAME</h6>
+                    </a>
+                </div>
             </div>
-        </div>
         </div>
 
     </main>
