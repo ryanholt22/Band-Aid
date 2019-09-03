@@ -16,7 +16,7 @@ var key = database.ref("Artist")
 
 
 //SEARCH HISTORY INPUTS
-$("#search").on("click", function (event) {
+$("#search").on("click", function(event) {
     event.preventDefault();
 
     // Grabs user input
@@ -30,39 +30,39 @@ $("#search").on("click", function (event) {
     currArtist = userSearch;
 
     //Add Liked Button
-    $("#liked").on("click", function (event) {
+    $("#liked").on("click", function(event) {
         event.preventDefault();
 
-        var likedList = $("<a>").append($("<a>").text(currArtist))
+        var likedList = ($("<a>").text(currArtist))
 
         likedList.addClass("list-group-item");
         likedList.attr("href", currArtist);
 
-        $("#hereAgain").append(likedList);
+        $("#hereAgain").prepend(likedList);
     });
 });
 
 // Adds Search to SEARCH HISTORY SIDENAV and DISPLAYS on FIRST ARTIST PAGE SECTION
-key.on("child_added", function (childSnapshot) {
+key.on("child_added", function(childSnapshot) {
 
     var userSearch = childSnapshot.val();
 
-    var newList = $("<a>").append($("<a>").text(userSearch));
+    var newList = ($("<a>").text(userSearch));
 
     newList.addClass("list-group-item");
     newList.attr("href", userSearch);
 
-    $("#here").append(newList);
+    $("#here").prepend(newList);
 });
 
 //Clear History
-$("#clearHistory").click(function () {
+$("#clearHistory").click(function() {
     $("#here").empty();
     key.remove();
 });
 
 //Clear Liked
-$("#clearLiked").on("click", function (event) {
+$("#clearLiked").on("click", function(event) {
     $("#hereAgain").empty();
     key.remove()
 });
