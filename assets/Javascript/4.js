@@ -2,7 +2,7 @@ $(document).on("click", "#search", function () {
   //event.preventDefault();
   var input = $("#input").val();
   //var queryURL;= "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=" + movie + "&key=AIzaSyDdG-co-zolXTJoNeRYFwE2f7L4qLDVRCY"
-  var q2 = "https://itunes.apple.com/search?term=" + input + "&limit=1"
+  var q2 = "http://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + input + "&limit=1"
   var music = {}
   var suggest = {}
   var limit = 30;
