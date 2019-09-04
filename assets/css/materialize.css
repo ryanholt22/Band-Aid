@@ -8838,6 +8838,9 @@ input[type=range]::-ms-thumb {
 .tap-target-content {
     position: relative;
     display: table-cell;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
 }
 
 .tap-target-wave {
