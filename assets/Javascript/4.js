@@ -2,7 +2,7 @@ $(document).on("click", "#search", function () {
   //event.preventDefault();
   var input = $("#input").val();
   //var queryURL;= "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=" + movie + "&key=AIzaSyDdG-co-zolXTJoNeRYFwE2f7L4qLDVRCY"
-  var q2 = "http://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + input + "&limit=1"
+  var q2 = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + input + "&limit=1"
   var music = {}
   var suggest = {}
   var limit = 30;
@@ -28,7 +28,7 @@ $(document).on("click", "#search", function () {
       $("#song").text(music.song)
     }
   }).then(function () {
-    var q3 = "https://itunes.apple.com/search?term=" + music.genre + "&limit=" + limit;
+    var q3 = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + music.genre + "&limit=" + limit;
     $.ajax({
       url: q3,
       method: "GET"
@@ -57,7 +57,7 @@ $(document).on("click", "#lyrics", function () {
   var f = $(document).find("#artist");
   d = d[0].innerHTML;
   f = f[0].innerHTML;
-  var q4 = ("http://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=" + d + "&q_artist=" + f + "&apikey=12211013789810f0dad17f2ba6f9ac3a")
+  var q4 = ("https://cors-anywhere.herokuapp.com/http://api.musixmatch.com/ws/1.1/matcher.lyrics.get?q_track=" + d + "&q_artist=" + f + "&apikey=12211013789810f0dad17f2ba6f9ac3a")
   $.ajax({
     url: q4,
     method: "GET"
