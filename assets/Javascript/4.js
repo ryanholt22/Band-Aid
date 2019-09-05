@@ -89,3 +89,58 @@ $(document).on("click", "#lyrics", function () {
   console.log(lyricsArray)
   return lyricsArray;
 });*/
+
+$(document).on("click", ".list-group-item", function () {
+  //event.preventDefault();
+  var input = $(this);
+  input = input[0].innerHTML;
+  //var queryURL;= "https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=3&q=" + movie + "&key=AIzaSyDdG-co-zolXTJoNeRYFwE2f7L4qLDVRCY"
+  var q2 = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + input + "&limit=1"
+  var music = {}
+  var suggest = {}
+  var limit = 30;
+
+  $.ajax({
+    url: q2,
+    method: "GET"
+  }).then(function (response) {
+    var tune = JSON.parse(response);
+    tune = tune.results;
+    for (var w = 0; w < tune.length; w++) {
+      var u = (tune[w].artworkUrl100)
+      var i = document.createElement("audio");
+      i.setAttribute("src", tune[w].previewUrl);
+      $(".img-responsive").attr('src', u)
+      music.artist = tune[w].artistName
+      music.album = tune[w].collectionName
+      music.song = tune[w].trackName
+      music.genre = tune[w].primaryGenreName
+      music.track = tune[w].previewUrl
+      $("#artist").text(music.artist)
+      $("#audio").attr('src', music.track)
+      $("#song").text(music.song)
+    }
+  }).then(function () {
+    var q3 = "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/search?term=" + music.genre + "&limit=" + limit;
+    $.ajax({
+      url: q3,
+      method: "GET"
+    }).then(function (response) {
+      var max = 0
+      var thing2 = JSON.parse(response);
+      for (var q = 0; q < thing2.results.length; q++) {
+        if (thing2.results[q].primaryGenreName === music.genre && max < 7) {
+          suggest.artist = thing2.results[q].artistName
+          suggest.album = thing2.results[q].collectionName
+          suggest.song = thing2.results[q].trackName
+          suggest.genre = thing2.results[q].primaryGenreName
+          suggest.track = thing2.results[q].previewUrl
+          $(".i"+max).attr('src', thing2.results[q].artworkUrl100)
+          $(".n"+max).text(suggest.artist)
+          max++;
+        }
+      }
+    })
+  })
+  $("#input").val("");
+})
